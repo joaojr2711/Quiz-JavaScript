@@ -100,7 +100,7 @@ const questions = [
     answers: [
       { text: '<!--Tag-->', correct: false },
       { text: '{Tag}', correct: false },
-      { text: '[{]Tag]', correct: false },
+      { text: '[Tag]', correct: false },
       { text: '<Tag>', correct: true }
     ]
   },
