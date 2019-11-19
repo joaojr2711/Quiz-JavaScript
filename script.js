@@ -6,10 +6,7 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 
 let shuffledQuestions, currentQuestionIndex
 
-startButton.addEventListener('click', () => { 
-  startGame(),
-  setCronometro()
-})
+startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
   currentQuestionIndex++
   setNextQuestion()
@@ -81,39 +78,39 @@ function clearStatusClass(element) {
 
 const questions = [
   {
-    question: 'HTML é uma linguagem de...',
+    question: 'O que significa HTML?',
     answers: [
-      { text: 'Marcação', correct: true },
-      { text: 'Progamação', correct: false },
-      { text: 'Criação', correct: false },
-      { text: 'Formatação', correct: false }
+      { text: 'HyperText Markup Language', correct: true },
+      { text: 'HypnoToad Multiple Loop', correct: false },
+      { text: 'HyperText Master Language', correct: false },
+      { text: 'HardText Markup Language', correct: false }
     ]
   },
   {
-    question: 'A tag para adição do estilo CSS fica entre que tags?',
+    question: 'Qual a primeira tag que um documento HTML deve conter?',
     answers: [
-      { text: '<body></body>', correct: false },
-      { text: '<title></title>', correct: false },
-      { text: '<head></head>', correct: true },
-      { text: '</title></head>', correct: false }
+      { text: '<html>', correct: false },
+      { text: '<head>', correct: false },
+      { text: '<!DOCTYPE html>', correct: true },
+      { text: '<title>', correct: false }
     ]
   },
   {
-    question: 'Para deixar a página com o fundo azul claro, qual tag deve ser inserida?',
+    question: 'As tags HTML são envolvidas por quais caracteres?',
     answers: [
-      { text: '<body style="background-color:lightblue">', correct: true },
-      { text: '<body style="backcolor:blue">', correct: false },
-      { text: '<body style="back-color-type:blue">', correct: false },
-      { text: '<body style="background-color:#0000FF">', correct: false }
+      { text: '<!--Tag-->', correct: false },
+      { text: '{Tag}', correct: false },
+      { text: '[{]Tag]', correct: false },
+      { text: '<Tag>', correct: true }
     ]
   },
   {
-    question: 'Para criar um link entre uma página e outra, usa-se a tag:',
+    question: 'O que simboliza uma tag de fechamento?',
     answers: [
-      { text: '<a="pagina.html"></a>', correct: false },
-      { text: '<href a="pagina.html"></a>', correct: false },
-      { text: '<link href="pagina.html">', correct: true },
-      { text: '<a href=pagina_html></a>', correct: false }
+      { text: '\ (barra invertida)', correct: false },
+      { text: '; (ponto e vírgula)', correct: false },
+      { text: '! (exclamação)', correct: false },
+      { text: '/ (barra)', correct: true }
     ]
   }
 ]
