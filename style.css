@@ -1,9 +1,8 @@
 body {
-  padding-top: 15%;
+  padding-top: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
 }
 
 .container {
@@ -23,9 +22,10 @@ body {
 
 .btn {
   border: 1px solid rgba(29, 29, 29, 0);
-  border-radius: 5px;
-  padding: 5px 10px;
-  outline: none;
+  border-radius: 15px;
+  padding: 10px 10px;
+  color:#1aa12c;
+  background: #d0e5c8;
 }
 
 button:hover {
@@ -33,20 +33,11 @@ button:hover {
   color: white;
 }
 
-.btn.correct {
-  background-color: #30860e;
-  color: white;
-}
-
-.btn.error {
-  background-color: #d11010;
-  color: white;
-}
-.start-btn, .next-btn, .time {
+.start-btn, .next-btn {
   font-size: 1.5rem;
-  font-weight: bold;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-radius: 15px;
+  background: #d0e5c8;
 }
 .start-btn, .next-btn:hover {
   transform: scale(1.1);
@@ -58,7 +49,61 @@ button:hover {
   align-items: center;
 }
 
+.control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
 .hide {
   display: none;
 }
 
+.restart-btn{
+  font-size: 1.2rem;
+  font-weight: lighter;
+  padding: 5px 15px;
+  border-radius: 15px;
+}
+
+.restart-btn:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.start-time {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border-radius: 15px;
+}
+
+.start-time:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.trofeu{
+  padding-left: 25px;
+  width: 130px;
+}
+
+.pontus{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%; 
+  margin: auto;
+  background-color: #30860e;
+}
+
+.text-p{
+  font-size: 24px;
+  color: #51bd27;
+}
+
+.score-p{
+  font-size: 30px;
+  text-align: center;
+  padding-top: 20px;
+  color: white;
+}

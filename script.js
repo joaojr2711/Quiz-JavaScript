@@ -1,10 +1,14 @@
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
+const restartButton = document.getElementById('restart-btn')
 const questionContainerElement = document.getElementById('question-container')
+const scoreContainerElement = document.getElementById('score')
+const scoreElement = document.getElementById('score-p')
+const textindex = document.getElementById('text-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
-let shuffledQuestions, currentQuestionIndex
+let shuffledQuestions, currentQuestionIndex, pontos
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -16,6 +20,7 @@ function startGame() {
   startButton.classList.add('hide')
   shuffledQuestions = questions.sort(() => Math.random() - .5)
   currentQuestionIndex = 0
+  pontos = 0
   questionContainerElement.classList.remove('hide')
   setNextQuestion()
 }
@@ -51,14 +56,13 @@ function selectAnswer(e) {
   const selectedButton = e.target
   const correct = selectedButton.dataset.correct
   setStatusClass(document.body, correct)
-  Array.from(answerButtonsElement.children).forEach(button => {
-    setStatusClass(button, button.dataset.correct)
-  })
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
-    startButton.innerText = 'Restart'
+    startButton.innerText = ('End')
     startButton.classList.remove('hide')
+    startButton.addEventListener('click', score)
+    scoreElement.innerHTML = pontos
   }
 }
 
@@ -66,6 +70,8 @@ function setStatusClass(element, correct) {
   clearStatusClass(element)
   if (correct) {
     element.classList.add('correct')
+    pontos = pontos + 1
+    console.log(pontos)
   } else {
     element.classList.add('error')
   }
@@ -74,6 +80,11 @@ function setStatusClass(element, correct) {
 function clearStatusClass(element) {
   element.classList.remove('correct')
   element.classList.remove('error')
+}
+
+function score(){
+  questionContainerElement.remove('question-container')
+  scoreContainerElement.classList.remove('hide')
 }
 
 const questions = [
@@ -107,10 +118,10 @@ const questions = [
   {
     question: 'O que simboliza uma tag de fechamento?',
     answers: [
-      { text: '\ (barra invertida)', correct: false },
+      { text: ' \ (barra invertida)', correct: false },
       { text: '; (ponto e vírgula)', correct: false },
       { text: '! (exclamação)', correct: false },
-      { text: '/ (barra)', correct: true }
+      { text: '/ (barra)', correct: true}
     ]
   }
 ]
