@@ -1,2 +1,2 @@
 # Quiz-JavaScript
-Esse projeto tem como finalidad, demonstrar meu primeiro contato com Javascript
+Esse projeto tem como finalidade, demonstrar meu primeiro contato com Javascript
