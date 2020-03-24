@@ -1,5 +1,2 @@
 # Quiz-JavaScript
-
-* v1.0 - 10/11/2019
-* v1.1 - 21/11/2019
-* v1.2 - 22/11/2019
+Esse projeto tem como finalidad, demonstrar meu primeiro contato com Javascript
